@@ -54,4 +54,9 @@ interface Api {
         @Field ("title") title: String?,
         @Field ("body") text:String?,
     ): Call<PostResponsesModel>
+
+    @DELETE("posts/{id}")
+    fun deletePost(
+        @Path("id") id: Int
+    ): Call<Void>
 }

@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         /*putUpdatePost()*/
 
-        patchUpdatePost()
+        /*patchUpdatePost()*/
+
+        deletePost()
     }
 
     private fun showPost() {
@@ -169,6 +171,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<PostResponsesModel>, t: Throwable) {
+                binding.tvResponseCode.text = t.message
+            }
+
+        })
+    }
+
+    fun deletePost() {
+        RetrofitClient.instance.deletePost(1).enqueue(object : Callback<Void>{
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                binding.tvResponseCode.text = response.code().toString()
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
                 binding.tvResponseCode.text = t.message
             }
 
