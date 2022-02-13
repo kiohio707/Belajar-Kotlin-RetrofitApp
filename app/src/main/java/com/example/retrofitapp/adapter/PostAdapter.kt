@@ -10,7 +10,8 @@ class PostAdapter(private val list: ArrayList<PostResponsesModel>):RecyclerView.
     class ViewHolder(private val binding: AdapterPostBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(postResponsesModel: PostResponsesModel) {
             with(binding) {
-                val text = "id: ${postResponsesModel.id}\n" +
+                val text = "userId: ${postResponsesModel.userId}\n" +
+                        "id: ${postResponsesModel.id}\n" +
                         "title: ${postResponsesModel.title}\n" +
                         "text: ${postResponsesModel.text}"
 

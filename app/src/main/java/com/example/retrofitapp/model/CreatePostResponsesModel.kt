@@ -2,7 +2,7 @@ package com.example.retrofitapp.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CreatePostResponseModel(
+data class CreatePostResponsesModel(
     val userId: String?,
     val id: Int,
     val title: String?,
